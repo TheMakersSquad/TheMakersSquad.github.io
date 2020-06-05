@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git and Github Cheatsheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <nav id="navbar">
+
+            <header id="main-header">Git</header>
+            <ul>
+
+                <li><a class="nav-link" href="#What_is_Git?">
+                        What is Git?
+                    </a></li>
+                <li><a class="nav-link" href="#Installation_and_Setup">
+                        Installation and Setup
+                    </a></li>
+                <li><a class="nav-link" href="#help">
+                        Help
+                    </a></li>
+                <li><a class="nav-link" href="#New_Repository">
+                        New Repository
+                    </a></li>
+                <li><a class="nav-link" href="#add_&_remove">
+                        Staging
+                    </a></li>
+                <li><a class="nav-link" href="#commit">
+                        Commit
+                    </a></li>
+                <li><a class="nav-link" href="#Workflow">
+                        Workflow
+                    </a></li>
+                <li><a class="nav-link" href="#Branches">
+                        Branches
+                    </a></li>
+                <li><a class="nav-link" href="#log">
+                        log
+                    </a></li>
+                <li><a class="nav-link" href="#Git_Checkout">
+                        Git Checkout
+                    </a></li>
+                <li><a class="nav-link" href="#Resources">
+                        Resources
+                    </a></li>
+
+            </ul>
+
+        </nav>
+        <main id="main-doc">
+            <h1>Git</h1>
+
+
+
+
+            <section id="What_is_Git?" class="main-section">
+                <header>What is Git?</header>
+
+                <p>Git is a distributed version control system (VCS) for tracking changes in computer files and
+                    coordinating work on those files among multiple people.
+                    <br />Version control system is a system that records changes to a file or set of files over time so
+                    that you can recall specific versions later. Unlike a central VCS, a distributed VCS has both remote
+                    and local repositories. As a result, it does not require the backup.</p>
+
+            </section>
+
+            <section id="Installation_and_Setup" class="main-section">
+                <header>Installation and Setup</header>
+
+
+                <p>
+                <ol>
+                    <li> Download Git from <a target="blank" href="https://git-scm.com">https://git-scm.com</a>
+                    </li>
+
+                    <li> Enter Configuration Values:
+                        <br />
+                        <code> $ git config --global user.name "firstName lastName"</code> - your name
+                        <br />
+                        <code> $ git config --global user.email "example@gmail.com"</code> - your email
+                    </li>
+
+                    <li> Check Your Settings:
+                        <br />
+                        <code>
+                                $ git config --list</code>
+                    </li>
+                </ol>
+                </p>
+
+
+
+            </section>
+
+            <section id="help" class="main-section">
+                <header>help</header>
+
+                <p>To open a manual and display information about Git:
+                    <br />
+                    <code>$ git help -a</code> or <code>$ git help --all</code> - shows a list of all available commands
+                    <br />
+                    <code>$ git help config</code> - explains how to use the Git verb, in this case, <code>config</code>
+                    <br />
+                    <code>$ git help -g</code> or <code>$ git help --guide</code> - shows a list of Git guides
+
+                </p>
+
+
+
+            </section>
+
+            <section id="New_Repository" class="main-section">
+                <header>New Repository</header>
+
+                <p>To create a New Repository:
+
+                    <br />
+                    <code>$ git init</code>
+                    <br />
+                    To clone a Remote Repository:
+
+                    <br />
+                    <code>$ git clone /Url/</code>
+
+                </p>
+            </section>
+
+
+            <section id="add_&_remove" class="main-section">
+                <header>Staging Area</header>
+                <p>
+                    To add / propose changes:
+                    <br />
+                    <code>$ git add /file/</code>
+                    <br />
+                    To add everything:
+                    <br />
+                    <code>$ git add .</code>
+                    <br />
+                    To remove:
+                    <br />
+                    <code>$ git reset /file/</code>
+
+                </p>
+
+            </section>
+
+            <section id="commit" class="main-section">
+                <header>commit</header>
+
+                <p>To commit changes:
+                    <br />
+                    <code>$ git diff</code> - shows the changes made
+                    <br />
+                    <code>$ git commit -m "Detailed message explaining the nature of changes"</code>
+                    <br />
+                    To push changes to remote repository:
+                    <br />
+                    <code>$ git pull origin master</code>
+                    <br />
+                    <code>$ git push origin master</code>
+
+                </p>
+            </section>
+
+            <section id="Workflow" class="main-section">
+                <header>Workflow</header>
+
+                <p> Git project consists of three main sections:
+                <ol>
+                    <li>Working Directory</li>
+                    <li>Staging Area / Index</li>
+                    <li>HEAD</li>
+                </ol>
+                </p>
+
+                <p> Three main states of files:
+                <ol>
+                    <li>Committed</li>
+                    <li>Modified</li>
+                    <li>Staged</li>
+                </ol>
+                </p>
+            </section>
+
+
+            <section id="Branches" class="main-section">
+                <header>Branches</header>
+
+                <p>A Git branch is a movable pointer to the commits. The default branch is called <em>master</em>. </p>
+                <p> To create a new branch:
+                    <code>$ git checkout -b newBranch</code>
+                    <br />
+                    To remove a branch:
+                    <code>$ git branch -d newBranch</code>
+                    <br />
+                    To go back to <em>master</em>:
+                    <code>$ git checkout master</code>
+                    <br />
+                    To push to the remote repository:
+                    <code>$ git push origin /branch/</code>
+                    <br />
+                    To merge a branch to current branch:
+                    <code>$ git merge /branch/</code>
+                </p>
+
+            </section>
+
+            <section id="log" class="main-section">
+                <header>log</header>
+
+                <p>To see the commit that was just made:
+                    <br />
+                    <code> $ git log</code>
+                    <br />
+                    The message, author, email, and other additional information will be displayed.
+                </p>
+
+
+            </section>
+
+            <section id="Git_Checkout" class="main-section">
+                <header>Git Checkout</header>
+
+                <p>
+                    <code>$ git checkout -- /file/</code>
+                    <br />
+                    or
+                    <br />
+                    <code>$ git fetch origin</code> - to cancel all the commits implemented locally
+                </p>
+            </section>
+
+            <section id="Resources" class="main-section">
+                <header>Resources</header>
+
+                <p>
+                    <a href="https://book.git-scm.com/"> Git Community Book</a>
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+
+<footer>
+    <p class="footer">Created by <a href="https://github.com/parajulibkrm">Bikram</a> For <a
+            href="https://github.com/themakerssquad">The Makers</a></p>
+</footer>
+
+</html>

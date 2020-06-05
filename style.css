@@ -1,0 +1,149 @@
+#container {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-areas:
+        "navigation info";
+}
+
+#navbar {
+    grid-area: navigation;
+    position: fixed;
+}
+
+#main-header {
+    text-align: left;
+    padding-left: 45px;
+}
+
+#main-doc {
+    grid-area: info;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.nav-link {
+    margin: 0;
+    padding: 5px;
+    border: 1px solid gray;
+    line-height: 35px;
+    display: block;
+    text-decoration: none;
+    color: gray;
+    text-align: left;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.nav-link:active {
+    color: #335C7F;
+}
+
+a:visited {
+    color: #335C7F;
+}
+
+a:hover {
+    color: gray;
+}
+
+header {
+    font-size: 30px;
+}
+
+p {
+    font-size: 24px;
+    line-height: 35px;
+}
+
+code {
+    color: #335C7F;
+    background-color: #D3D3D3;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+}
+
+section {
+    margin: 80px;
+}
+
+ol {
+    font-size: 24px;
+    line-height: 35px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 1rem;
+    width: 21.825rem;
+    margin: auto;
+    text-transform: uppercase;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    p {
+        font-size: 24px;
+    }
+
+    #navbar {
+        grid-area: navigation;
+    }
+
+    #main-doc {
+        grid-area: info;
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+
+    p {
+        font-size: 24px;
+    }
+
+    #navbar {
+        grid-area: navigation;
+    }
+
+    #main-doc {
+        grid-area: info;
+    }
+}
+
+@media (max-width: 600px) {
+
+    p {
+        font-size: 20px;
+    }
+
+    #navbar {
+        grid-area: navigation;
+    }
+
+    #main-doc {
+        grid-area: info;
+    }
+}
+
+@media (max-width: 350px) {
+
+    p {
+        font-size: 16px;
+    }
+
+    #navbar {
+        grid-area: navigation;
+    }
+
+    #main-doc {
+        grid-area: info;
+    }
+}
